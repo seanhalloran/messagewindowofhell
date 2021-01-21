@@ -1,0 +1,43 @@
+// This program calculates the sale price of an
+// item that is regularly priced at $59, with
+// a 20 percent discount subtracted.
+
+import javax.swing.*;
+import java.util.Scanner;  // Needed for the Scanner class
+import java.lang.String;
+import java.text.DecimalFormat;
+
+public class DiscountCost {
+    public static void main(String[] args)
+
+    {
+        //Variables to hold the regular price, the
+        //amount of a discount, and the sale price.
+        double regularPrice;
+        double salePrice;
+        double discount;
+        DecimalFormat df = new DecimalFormat("#.##");
+        String outputMessage;
+
+        // Create a Scanner object to read input
+        Scanner keyboard = new Scanner(System.in);
+
+        // Get the regular price
+        JOptionPane.showInputDialog("Enter regular price: ");
+        regularPrice = keyboard.nextInt();
+
+        // Calculate the amount of a 20% discount.
+        salePrice = regularPrice * 0.80;
+
+        // Calculate the sale price by subtracting
+        // the discount from the regular price.
+        discount = regularPrice - salePrice;
+        String formattedDiscount = df.format(discount);
+        // Display the results.
+        outputMessage = "Regular Price: $" + regularPrice + "\n";
+        outputMessage += "Discount Amount: $" + formattedDiscount + "\n";
+        outputMessage += "Sale Price: $" + salePrice;
+        JOptionPane.showMessageDialog(null,outputMessage);
+    System.exit(0);
+    }
+}
